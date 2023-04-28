@@ -41,13 +41,13 @@ export class AppComponent {
 
     deleteSelectedProducts() {
         this.confirmationService.confirm({
-            message: 'Are you sure you want to delete the selected products?',
+            message: 'Tem certeza de que deseja excluir os produtos selecionados?',
             header: 'Confirm',
             icon: 'pi pi-exclamation-triangle',
             accept: () => {
                 this.products = this.products.filter(val => !this.selectedProducts.includes(val));
                 this.selectedProducts = null;
-                this.messageService.add({severity:'success', summary: 'Successful', detail: 'Products Deleted', life: 3000});
+                this.messageService.add({severity:'success', summary: 'Successful', detail: 'Produto Excluido', life: 3000});
             }
         });
     }
@@ -59,7 +59,7 @@ export class AppComponent {
 
     deleteProduct(product: Product) {
         this.confirmationService.confirm({
-            message: 'Are you sure you want to delete ' + product.name + '?',
+            message: 'Tem certeza de que deseja excluir ' + product.name + '?',
             header: 'Confirm',
             icon: 'pi pi-exclamation-triangle',
             accept: () => {
