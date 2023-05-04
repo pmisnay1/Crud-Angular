@@ -47,7 +47,7 @@ export class AppComponent {
             accept: () => {
                 this.products = this.products.filter(val => !this.selectedProducts.includes(val));
                 this.selectedProducts = null;
-                this.messageService.add({severity:'success', summary: 'Successful', detail: 'Produto Excluido', life: 3000});
+                this.messageService.add({severity:'Sucesso', summary: 'Successo', detail: 'Produto Excluido', life: 3000});
             }
         });
     }
@@ -65,7 +65,7 @@ export class AppComponent {
             accept: () => {
                 this.products = this.products.filter(val => val.id !== product.id);
                 this.product = {};
-                this.messageService.add({severity:'success', summary: 'Successful', detail: 'Produto Excluido', life: 3000});
+                this.messageService.add({severity:'sucesso', summary: 'Sucesso', detail: 'Produto Excluido', life: 3000});
             }
         });
     }
@@ -81,13 +81,13 @@ export class AppComponent {
         if (this.product.name.trim()) {
             if (this.product.id) {
                 this.products[this.findIndexById(this.product.id)] = this.product;                
-                this.messageService.add({severity:'Sucesso', summary: 'Successful', detail: 'Produto Alterado', life: 3000});
+                this.messageService.add({severity:'Sucesso', summary: 'Sucesso', detail: 'Produto Alterado', life: 3000});
             }
             else {
                 this.product.id = this.createId();
                 this.product.image = 'product-placeholder.svg';
                 this.products.push(this.product);
-                this.messageService.add({severity:'success', summary: 'Successful', detail: 'Product Created', life: 3000});
+                this.messageService.add({severity:'sucesso', summary: 'Sucesso', detail: 'Produto Criado', life: 3000});
             }
 
             this.products = [...this.products];
